@@ -7,7 +7,6 @@ FT_SELECT:
     ☐ get the math for the selecting down
     ☐  implement down arrow key
     ☐  implement up arrow key
-☐  update libft and make the list functions more modular
 ✔ Figure out how to make the files show up in temrinal form @done (9/22/2017, 5:31:27 PM)
 ✔ get the terminal to refresh properly @done (9/22/2017, 5:31:33 PM)
 ☐  handle signals
@@ -20,3 +19,5 @@ FT_SELECT:
 
 ☐  refactor
     ☐ Restructure input ops code
+    ☐  update libft and make the list functions more modular
+
