@@ -1,0 +1,18 @@
+FT_SELECT:
+
+✔ implement an old termios structure for resetting the termios @done (9/22/2017, 4:11:19 PM)
+    attributes 
+☐ get the math for the selecting down
+☐  Make a function which will indicate which file is currently chosen
+    ☐ implement right arrow key
+    ☐  implement left arrow key
+    ☐  implement down arrow key
+    ☐  implement up arrow key
+☐  refactor
+☐  update libft and make the list functions more modular
+☐  Figure out how to make the files show up in temrinal form
+☐  get the terminal to refresh properly
+the terminal gets cleared at this point when arguments are fed in
+☐ I'm still not entirely sure why I have to use putintc instead of just 0
+☐  handle signals
+☐  implement some kind of list for the selected elements.

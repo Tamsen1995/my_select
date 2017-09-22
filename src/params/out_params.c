@@ -7,11 +7,13 @@
 
 void            show_elem(t_params *tmp_param)
 {
-    // tputs(tgetstr("us", NULL), 1, putintc); // TESTING
-        // TODO make the cursor move properly and then only fire this line
-            // if the current element is the selected one.
-    // tputs(tgetstr("us", NULL), 1, putintc); // TESTING
+                
+    if (tmp_param->current)
+        tputs(tgetstr("us", NULL), 1, putintc); // underlne mode on
     ft_putstr(tmp_param->filename); // TESTING
+    if (tmp_param->current)
+        tputs(tgetstr("ue", NULL), 1, putintc); // underline mode off
+
 }
 
 /*

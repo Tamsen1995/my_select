@@ -11,23 +11,7 @@ int             putintc(int c)
     return (0);
 }
 
-/*
-** Called everytime
-**
-*/
 
-void            catch_signals(void)
-{
-    int     i;
-
-    i = 0;
-    while (i < 33)
-    {
-        signal(i, handlers);
-        i++;
-    }
-
-}
 
 /*
 ** the core of the program
@@ -41,10 +25,11 @@ void            coreloop(t_params *params)
     shell = NULL;
     shell = get_shell();
     catch_signals();
+    shell->list = add_brackets(params);
+    shell->list->current = TRUE;
     while (1)
     {
         tputs(tgetstr("cl", NULL), 1, putintc); // TESTING
-        shell->list = add_brackets(params);
         handle_input(shell, buf); // TESTING
         out_params(shell); // TESTING
         read(0, buf, 4);
