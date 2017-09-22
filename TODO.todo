@@ -7,11 +7,15 @@ FT_SELECT:
     ☐ get the math for the selecting down
     ☐  implement down arrow key
     ☐  implement up arrow key
-☐  refactor
 ☐  update libft and make the list functions more modular
-☐  Figure out how to make the files show up in temrinal form
-☐  get the terminal to refresh properly
-the terminal gets cleared at this point when arguments are fed in
-☐ I'm still not entirely sure why I have to use putintc instead of just 0
+✔ Figure out how to make the files show up in temrinal form @done (9/22/2017, 5:31:27 PM)
+✔ get the terminal to refresh properly @done (9/22/2017, 5:31:33 PM)
 ☐  handle signals
-☐  implement some kind of list for the selected elements.
+    ✔ window size change @done (9/22/2017, 5:32:05 PM)
+    ✔ quitting with control C @done (9/22/2017, 5:32:26 PM)
+
+☐ selecting elements
+    ☐ handle booleans for the select elements
+    ☐ implement highlighting for selected elements
+
+☐  refactor

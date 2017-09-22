@@ -56,7 +56,6 @@
 # define BGLIGHT "\033[47m"
 # define BGGRAY "\033[47m"
 
-
 typedef enum e_flgs
 {
 	f_recur = 0,
