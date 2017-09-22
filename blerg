@@ -1,3 +1,3 @@
 git add -A
-git commit -m "[UPD] implemented the left arrow"
-git push origin left_arrow
+git commit -m "[UPD] The highlighting of the selected files now work"
+git push origin space_select
