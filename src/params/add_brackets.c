@@ -81,6 +81,24 @@ t_params        *make_brackets_list(t_params *params, int longest_len)
 }
 
 /*
+** attaches the end of the list to the beginning
+** of it in order to make the list circular
+*/
+
+void            make_circular(t_params *params)
+{
+    t_params *tmp;
+
+    tmp = NULL;
+    if (!params)
+        fatal("ERROR in (make_circular)");
+    tmp = params;
+    while (tmp->next)
+        tmp = tmp->next;
+    tmp->next = params;
+}
+
+/*
 ** figures out the longest string
 ** and makes all the params uniform by adding
 ** brackets to the params list
@@ -107,13 +125,5 @@ t_params        *add_brackets(t_params *params)
         tmp = tmp->next;
     longest_len = find_max_str(tmp);
     ret = make_brackets_list(tmp, longest_len);
-
-
-
-    // out of the from tmp to pointed list figure out
-        // the len of the lognest string
-
-
-    // TODO free params
-    return (ret); // TESTING
+    return (ret);
 }
