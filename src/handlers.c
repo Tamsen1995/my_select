@@ -45,8 +45,8 @@ static void     handlers(int sig)
 {
     if (sig == SIGWINCH)
         win_handler();
-   // if (sig == SIGINT)
-     //   exit_handler();
+    if (sig == SIGINT)
+        exit_handler();
 
 
 }

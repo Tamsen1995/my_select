@@ -4,7 +4,7 @@ FT_SELECT:
     attributes 
 ☐ get the math for the selecting down
 ☐  Make a function which will indicate which file is currently chosen
-    ☐ implement right arrow key
+    ✔ implement right arrow key @done (9/22/2017, 5:00:01 PM)
     ☐  implement left arrow key
     ☐  implement down arrow key
     ☐  implement up arrow key

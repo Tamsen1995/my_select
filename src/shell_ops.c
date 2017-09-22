@@ -51,6 +51,7 @@ t_shell         *make_shell(void)
     if (tcgetattr(0, shell->term) == -1)
         fatal("Could not get attributes for terminal (make_shell)");
     ioctl(0, TIOCGWINSZ, shell->sz);
+	tputs(tgetstr("vi", NULL), 1, putintc);
     shell->term->c_lflag &= ~(ECHO);
     shell->term->c_lflag &= ~(ICANON);
     apply_mode(shell);
