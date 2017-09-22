@@ -13,6 +13,7 @@ t_params		*ft_add_param(char *filename)
 		return (NULL);
 	param->filename = ft_strdup(filename);
     param->next = NULL;
+    param->prev = NULL;
     param->select = FALSE;
     param->current = FALSE;
 	return (param);
