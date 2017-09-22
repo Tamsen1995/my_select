@@ -1,3 +1,4 @@
+
 #include "../../includes/ft_select.h"
 
 /*
@@ -62,8 +63,6 @@ void            cursor_down(t_shell *shell)
     
     words = 0;
     i = 0;
-    if (!shell || !shell->list)
-        fatal("Error (cursor_down)");
     words = words_per_line(shell);
     tmp = shell->list;
     while (tmp->current == FALSE)
@@ -71,10 +70,15 @@ void            cursor_down(t_shell *shell)
     tmp->current = FALSE;
     while (i < words)
     {
+        if (!tmp->next)
+        {
+            tmp = shell->list;
+            if (words % 2 == 0)
+                tmp = tmp->next;
+        }
+        else
+            tmp = tmp->next;
         i++;
-        tmp = tmp->next;
     }
     tmp->current = TRUE;
-
-    // TODO complete once the circular list has been implemented
 }

@@ -4,8 +4,8 @@ FT_SELECT:
 ☐  Make a function which will indicate which file is currently chosen
     ✔ implement right arrow key @done (9/22/2017, 5:00:01 PM)
     ✔ implement left arrow key @done (9/22/2017, 5:23:41 PM)
-    ☐ get the math for the selecting down
-    ☐  implement down arrow key
+    ✔ get the math for the selecting down @done (9/22/2017, 11:36:13 PM)
+    ✔ implement down arrow key @done (9/22/2017, 11:36:03 PM)
     ☐  implement up arrow key
 ✔ Figure out how to make the files show up in temrinal form @done (9/22/2017, 5:31:27 PM)
 ✔ get the terminal to refresh properly @done (9/22/2017, 5:31:33 PM)
