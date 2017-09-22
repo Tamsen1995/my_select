@@ -15,7 +15,8 @@ FT_SELECT:
     ✔ quitting with control C @done (9/22/2017, 5:32:26 PM)
 
 ☐ selecting elements
-    ☐ handle booleans for the select elements
-    ☐ implement highlighting for selected elements
+    ✔ handle booleans for the select elements @done (9/22/2017, 5:57:37 PM)
+    ✔ implement highlighting for selected elements @done (9/22/2017, 5:57:42 PM)
 
 ☐  refactor
+    ☐ Restructure input ops code

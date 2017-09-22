@@ -7,13 +7,15 @@
 
 void            show_elem(t_params *tmp_param)
 {
-                
+    if (tmp_param->select)
+        tputs(tgetstr("mr", NULL), 1, putintc);          
     if (tmp_param->current)
         tputs(tgetstr("us", NULL), 1, putintc); // underlne mode on
     ft_putstr(tmp_param->filename); // TESTING
     if (tmp_param->current)
         tputs(tgetstr("ue", NULL), 1, putintc); // underline mode off
-
+    if (tmp_param->select)
+        tputs(tgetstr("me", NULL), 1, putintc);
 }
 
 /*
