@@ -1,3 +1,3 @@
 git add -A
-git commit -m "[FIX] whenever an item is selected the cursor needs to move to the right"
-git push origin space_iterate
+git commit -m "[UPD] whenever an item is selected the cursor needs to move to the right"
+git push origin develop
