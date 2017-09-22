@@ -16,6 +16,7 @@ FT_SELECT:
 ☐ selecting elements
     ✔ handle booleans for the select elements @done (9/22/2017, 5:57:37 PM)
     ✔ implement highlighting for selected elements @done (9/22/2017, 5:57:42 PM)
+    ✔ when an item is selected move the cursor to the right @done (9/22/2017, 6:09:05 PM)
 
 ☐  refactor
     ☐ Restructure input ops code
