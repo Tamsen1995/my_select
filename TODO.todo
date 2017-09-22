@@ -18,6 +18,10 @@ FT_SELECT:
     ✔ implement highlighting for selected elements @done (9/22/2017, 5:57:42 PM)
     ✔ when an item is selected move the cursor to the right @done (9/22/2017, 6:09:05 PM)
 
+☐ Change the list into a circular list
+    ☐ Make a marker that indicates the beginning of the list
+    ☐ link the last element to the first element in the list
+
 ☐  refactor
     ✔ Restructure input ops code @done (9/22/2017, 6:28:29 PM)
     ☐  update libft and make the list functions more modular

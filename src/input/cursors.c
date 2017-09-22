@@ -51,3 +51,30 @@ void            cursor_left(t_shell *shell)
         tmp->current = TRUE;
     }
 }
+
+
+
+void            cursor_down(t_shell *shell)
+{
+    int         words;
+    int         i;
+    t_params    *tmp;
+    
+    words = 0;
+    i = 0;
+    if (!shell || !shell->list)
+        fatal("Error (cursor_down)");
+    words = words_per_line(shell);
+    tmp = shell->list;
+    while (tmp->current == FALSE)
+        tmp = tmp->next;
+    tmp->current = FALSE;
+    while (i < words)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    tmp->current = TRUE;
+
+    // TODO complete once the circular list has been implemented
+}
