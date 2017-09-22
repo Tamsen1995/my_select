@@ -1,17 +1,17 @@
 FT_SELECT:
-✔ implement an old termios structure for resetting the termios @done (9/22/2017, 4:11:19 PM)
-    attributes 
-☐  Make a function which will indicate which file is currently chosen
+✔ implement an old termios structure for resetting the termios attributes  @done (9/22/2017, 4:11:19 PM)
+✔ Make a function which will indicate which file is currently chosen @done (9/22/2017, 11:55:30 PM)
     ✔ implement right arrow key @done (9/22/2017, 5:00:01 PM)
     ✔ implement left arrow key @done (9/22/2017, 5:23:41 PM)
     ✔ get the math for the selecting down @done (9/22/2017, 11:36:13 PM)
     ✔ implement down arrow key @done (9/22/2017, 11:36:03 PM)
-    ☐  implement up arrow key
+    ✔ implement up arrow key @done (9/22/2017, 11:55:28 PM)
 ✔ Figure out how to make the files show up in temrinal form @done (9/22/2017, 5:31:27 PM)
 ✔ get the terminal to refresh properly @done (9/22/2017, 5:31:33 PM)
 ☐  handle signals
     ✔ window size change @done (9/22/2017, 5:32:05 PM)
     ✔ quitting with control C @done (9/22/2017, 5:32:26 PM)
+    ☐ check out the other signals from example
 
 ☐ selecting elements
     ✔ handle booleans for the select elements @done (9/22/2017, 5:57:37 PM)

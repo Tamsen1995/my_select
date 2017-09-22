@@ -14,7 +14,7 @@ static void     arrow_keys(t_shell *shell, char *buf)
         fatal("ERROR (arrow_keys)");
     tmp = shell;
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 65 && buf[3] == 0)
-        ft_putendl("UP"); // TESTING
+        cursor_up(shell);
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 66 && buf[3] == 0)
         cursor_down(shell);
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 68 && buf[3] == 0)
