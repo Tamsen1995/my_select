@@ -31,10 +31,12 @@ typedef struct		s_shell
 ** in the header
 */
 
+void            cursor_up(t_shell *shell);
 void            cursor_down(t_shell *shell);
 void            cursor_left(t_shell *shell);
 void            cursor_right(t_shell *shell);
-//void            handlers(int sig);
+
+
 void            catch_signals(void);
 int             words_per_line(t_shell *shell);
 int             putintc(int c);

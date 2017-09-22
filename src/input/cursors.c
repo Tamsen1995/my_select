@@ -53,8 +53,6 @@ void            cursor_left(t_shell *shell)
     }
 }
 
-
-
 void            cursor_down(t_shell *shell)
 {
     int         words;
@@ -78,6 +76,35 @@ void            cursor_down(t_shell *shell)
         }
         else
             tmp = tmp->next;
+        i++;
+    }
+    tmp->current = TRUE;
+}
+
+void            cursor_up(t_shell *shell)
+{
+    int         words;
+    int         i;
+    t_params    *tmp;
+    
+    words = 0;
+    i = 0;
+    words = words_per_line(shell);
+    tmp = shell->list;
+    while (tmp->current == FALSE)
+        tmp = tmp->next;
+    tmp->current = FALSE;
+    while (i < words)
+    {
+        if (!tmp->prev)
+        {
+            while (tmp->next)
+                tmp = tmp->next;
+            if (words % 2 == 0)
+                tmp = tmp->prev;
+        }
+        else
+            tmp = tmp->prev;
         i++;
     }
     tmp->current = TRUE;
