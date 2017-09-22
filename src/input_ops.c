@@ -96,6 +96,11 @@ void            select_elem(t_shell *shell)
         tmp->select = FALSE;
     else if (tmp->select == FALSE)
         tmp->select = TRUE;
+    tmp->current = FALSE;
+    if (tmp->next)
+        tmp->next->current = TRUE;
+    else if (!tmp->next)
+        shell->list->current = TRUE;
 }
 
 /*
