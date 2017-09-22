@@ -32,7 +32,6 @@ typedef struct		s_shell
 */
 
 void            cursor_down(t_shell *shell);
-
 void            cursor_left(t_shell *shell);
 void            cursor_right(t_shell *shell);
 //void            handlers(int sig);

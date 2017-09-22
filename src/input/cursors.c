@@ -52,16 +52,29 @@ void            cursor_left(t_shell *shell)
     }
 }
 
+
+
 void            cursor_down(t_shell *shell)
 {
-    int wrd_p_line;
+    int         words;
+    int         i;
+    t_params    *tmp;
     
-    wrd_p_line = 0;
-    if (!shell)
+    words = 0;
+    i = 0;
+    if (!shell || !shell->list)
         fatal("Error (cursor_down)");
-    wrd_p_line = words_per_line(shell);
+    words = words_per_line(shell);
+    tmp = shell->list;
+    while (tmp->current == FALSE)
+        tmp = tmp->next;
+    tmp->current = FALSE;
+    while (i < words)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    tmp->current = TRUE;
 
-    ft_putnbr(wrd_p_line); // TESTING
-    ft_putendl("");
-
+    // TODO complete once the circular list has been implemented
 }
