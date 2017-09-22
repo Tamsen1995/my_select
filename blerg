@@ -1,3 +1,3 @@
 git add -A
-git commit -m "[ADD] Gonna implement the left arrow"
+git commit -m "[UPD] Gonna implemented the left arrow"
 git push origin left_arrow

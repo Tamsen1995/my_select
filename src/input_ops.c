@@ -27,6 +27,33 @@ void            cursor_right(t_shell *shell)
 }
 
 /*
+** Moves the cursor in the programm shell
+** to the left
+*/
+
+void            cursor_left(t_shell *shell)
+{
+    t_params *tmp;
+
+    tmp = NULL;
+    if (!shell || !shell->list)
+        fatal("ERROR (cursor_right)");
+    tmp = shell->list;
+    while (tmp->current == FALSE && tmp)
+        tmp = tmp->next;
+    if (tmp->prev)
+        tmp->prev->current = TRUE;
+    tmp->current = FALSE;
+    if (!tmp->prev)
+    {
+        tmp->current = FALSE;
+        while (tmp->next)
+            tmp = tmp->next;
+        tmp->current = TRUE;
+    }
+}
+
+/*
 ** ** if an arrow key is recognized
 ** the flow is directed into here
 */
@@ -42,12 +69,9 @@ static void     arrow_keys(t_shell *shell, char *buf)
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 66 && buf[3] == 0)
         ft_putendl("DOWN"); // TESTING
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 68 && buf[3] == 0)
-        ft_putendl("LEFT"); // TESTING
+        cursor_left(shell);
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 67 && buf[3] == 0)
-    {
-        ft_putendl("RIGHT"); // TESTING
         cursor_right(shell);
-    }
 }
 
 /*

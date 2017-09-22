@@ -11,8 +11,6 @@ int             putintc(int c)
     return (0);
 }
 
-
-
 /*
 ** the core of the program
 */
