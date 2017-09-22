@@ -51,3 +51,17 @@ void            cursor_left(t_shell *shell)
         tmp->current = TRUE;
     }
 }
+
+void            cursor_down(t_shell *shell)
+{
+    int wrd_p_line;
+    
+    wrd_p_line = 0;
+    if (!shell)
+        fatal("Error (cursor_down)");
+    wrd_p_line = words_per_line(shell);
+
+    ft_putnbr(wrd_p_line); // TESTING
+    ft_putendl("");
+
+}

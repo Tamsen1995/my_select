@@ -19,7 +19,7 @@ int             words_per_line(t_shell *shell)
         fatal("Error in (words_per_line)");
     tmp_params = shell->list;
     word_len = ft_strlen(tmp_params->filename);
-   // word_len++;
+    word_len++;
 
     ret = shell->sz->ws_col / word_len;
 
