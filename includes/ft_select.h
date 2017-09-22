@@ -13,12 +13,14 @@ typedef struct		s_params
 	struct s_params	*next;
 	struct s_params	*prev;
 	char			*filename;
-	T_BOOL 			select;
+	T_BOOL			current; // indicates if the elem is the current elem the cursor is pointing to
+	T_BOOL 			select; // indicates if the elem is selected
 }					t_params;
 
 typedef struct		s_shell
 {
 	struct winsize		*sz;
+	struct termios		*termold;
 	struct termios		*term;
 	t_params			*list;
 
@@ -29,7 +31,8 @@ typedef struct		s_shell
 ** in the header
 */
 
-void            handlers(int sig);
+//void            handlers(int sig);
+void            catch_signals(void);
 int             words_per_line(t_shell *shell);
 int             putintc(int c);
 void            out_params(t_shell *shell); // TESTING

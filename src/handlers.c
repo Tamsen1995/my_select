@@ -16,6 +16,24 @@ void            win_handler(void)
 }
 
 
+
+void            sel_mode_off(t_shell *shell)
+{
+	tcsetattr(0, TCSADRAIN, shell->termold);
+	tputs(tgetstr("te", NULL), 1, putintc);
+	tputs(tgetstr("ve", NULL), 1, putintc);
+}
+
+void            exit_handler()
+{
+    t_shell *shell;
+
+    shell = get_shell();
+    sel_mode_off(shell);
+    exit(0);
+
+}
+
 /*
 ** receives a signal number inside
 ** the signal function
@@ -23,10 +41,31 @@ void            win_handler(void)
 ** handler
 */
 
-void            handlers(int sig)
+static void     handlers(int sig)
 {
     if (sig == SIGWINCH)
         win_handler();
+    if (sig == SIGINT)
+        exit_handler();
 
+
+}
+
+/*
+** Called everytime
+** the termianl emits a 
+** signal into the programs
+*/
+
+void            catch_signals(void)
+{
+    int     i;
+
+    i = 0;
+    while (i < 33)
+    {
+        signal(i, handlers);
+        i++;
+    }
 
 }

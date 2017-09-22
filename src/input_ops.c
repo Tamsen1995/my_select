@@ -8,12 +8,22 @@
 
 void            cursor_right(t_shell *shell)
 {
+    t_params *tmp;
 
-
-    ft_putnbr(shell->sz->ws_row);
-    ft_putendl("");
-    ft_putnbr(shell->sz->ws_col); //  columns
-    ft_putendl("");
+    tmp = NULL;
+    if (!shell || !shell->list)
+        fatal("ERROR (cursor_right)");
+    tmp = shell->list;
+    while (tmp->current == FALSE && tmp)
+        tmp = tmp->next;
+    if (tmp->next)
+        tmp->next->current = TRUE;
+    tmp->current = FALSE;
+    if (!tmp->next)
+    {
+        tmp->current = FALSE;
+        shell->list->current = TRUE;
+    }
 }
 
 /*
@@ -23,6 +33,10 @@ void            cursor_right(t_shell *shell)
 
 static void     arrow_keys(t_shell *shell, char *buf)
 {
+    t_shell *tmp;// TESTING
+
+    tmp = shell;
+
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 65 && buf[3] == 0)
         ft_putendl("UP"); // TESTING
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 66 && buf[3] == 0)
@@ -30,7 +44,10 @@ static void     arrow_keys(t_shell *shell, char *buf)
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 68 && buf[3] == 0)
         ft_putendl("LEFT"); // TESTING
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 67 && buf[3] == 0)
-        cursor_right(shell); // TESTING
+    {
+        ft_putendl("RIGHT"); // TESTING
+        cursor_right(shell);
+    }
 }
 
 /*
