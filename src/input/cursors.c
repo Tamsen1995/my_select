@@ -69,11 +69,7 @@ void            cursor_down(t_shell *shell)
     while (i < words)
     {
         if (!tmp->next)
-        {
             tmp = shell->list;
-            if (words % 2 == 0)
-                tmp = tmp->next;
-        }
         else
             tmp = tmp->next;
         i++;
@@ -100,8 +96,6 @@ void            cursor_up(t_shell *shell)
         {
             while (tmp->next)
                 tmp = tmp->next;
-            if (words % 2 == 0)
-                tmp = tmp->prev;
         }
         else
             tmp = tmp->prev;
