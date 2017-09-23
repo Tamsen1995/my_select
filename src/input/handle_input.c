@@ -60,7 +60,7 @@ void            del_elem(t_shell *shell)
     t_params *tmp;
 
     tmp = shell->list;
-    while (tmp->next->current == FALSE) // iterate until the NEXT one is the current cursor one
+    while (tmp->next->current == FALSE && tmp) // iterate until the NEXT one is the current cursor one
         tmp = tmp->next;
     tmp->next = tmp->next->next; // point the next pointer to the one after the cursor elem
     tmp->next->current = TRUE;
