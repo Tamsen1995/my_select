@@ -50,6 +50,24 @@ void            select_elem(t_shell *shell)
         shell->list->current = TRUE;
 }
 
+
+/*
+** removes an item from the list
+*/
+
+void            del_elem(t_shell *shell)
+{
+    t_params *tmp;
+
+    tmp = shell->list;
+    while (tmp->next->current == FALSE) // iterate until the NEXT one is the current cursor one
+        tmp = tmp->next;
+    tmp->next = tmp->next->next; // point the next pointer to the one after the cursor elem
+    tmp->next->current = TRUE;
+    
+
+}
+
 /*
 ** checks the received buffer for its input
 ** and determines what kind of input it is
@@ -57,10 +75,18 @@ void            select_elem(t_shell *shell)
 
 void            handle_input(t_shell *shell, char *buf)
 {
+    if (!shell && !shell->list)
+        fatal("ERROR (handle_input)");
+
+
     if (buf[0] == 27)
         arrow_keys(shell, buf);
-    if (buf[0] == 10 )
-        ft_putendl("ENTER"); // TESTING
-    if (buf[0] == 32)
+    else if (buf[0] == 32)
         select_elem(shell);
+    else if (buf[0] == 127)
+        del_elem(shell);
+    else if (buf[0] == 10 )
+        ft_putendl("ENTER"); // TESTING
+
+        
 }

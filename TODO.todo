@@ -25,4 +25,5 @@ FT_SELECT:
     ☐ fix arrow key up
 ☐ implement backspace key
     ☐ recognize backspace key
-    ☐ delete element from list
+    ☐ delete element from list & make the item after it the current item
+    ☐ Make sure the program exits if there are no more params
