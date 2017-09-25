@@ -58,17 +58,40 @@ void            select_elem(t_shell *shell)
 void            del_elem(t_shell *shell)
 {
     t_params *tmp;
+    t_params *del;
 
     tmp = shell->list;
+
+    // going to the current item
     while (tmp->current == FALSE && tmp)
         tmp = tmp->next;
+
+    // Delete the item
+    del = tmp;
+
+    // set the next item to the current one
     if (tmp->next)
         tmp->next->current = TRUE;
     else
         shell->list->current = TRUE;
     tmp->current = FALSE;
-    if (tmp->prev)
+
+    // if there is an element before the one we're at then 
+    // point its next pointer to the next item
+    if (tmp->prev && tmp->next)
+    {
         tmp->prev->next = tmp->next;
+        tmp->next->prev = tmp->prev;
+    }
+    else if (!tmp->prev)
+    {
+        shell->list = shell->list->next;
+        shell->list->prev = NULL;
+    }
+    else if (!tmp->next)
+        tmp->prev->next = NULL;
+    
+    
     
 }
 

@@ -38,9 +38,7 @@ void            ft_push_back_param(t_params **begin_list, char *filename)
 	}
     tmp = *begin_list;    
     while (tmp->next)
-    {
         tmp = tmp->next;
-    }
     tmp->next = new;
     tmp->next->prev = tmp;
 }
