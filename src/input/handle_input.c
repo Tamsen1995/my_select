@@ -60,12 +60,16 @@ void            del_elem(t_shell *shell)
     t_params *tmp;
 
     tmp = shell->list;
-    while (tmp->next->current == FALSE && tmp) // iterate until the NEXT one is the current cursor one
+    while (tmp->current == FALSE && tmp)
         tmp = tmp->next;
-    tmp->next = tmp->next->next; // point the next pointer to the one after the cursor elem
-    tmp->next->current = TRUE;
+    if (tmp->next)
+        tmp->next->current = TRUE;
+    else
+        shell->list->current = TRUE;
+    tmp->current = FALSE;
+    if (tmp->prev)
+        tmp->prev->next = tmp->next;
     
-
 }
 
 /*
@@ -77,8 +81,6 @@ void            handle_input(t_shell *shell, char *buf)
 {
     if (!shell && !shell->list)
         fatal("ERROR (handle_input)");
-
-
     if (buf[0] == 27)
         arrow_keys(shell, buf);
     else if (buf[0] == 32)
