@@ -32,6 +32,7 @@ static void             del_elem(t_params *del)
 {
     ft_strfree(del->filename);
     free(del);
+    del = NULL;
 }
 
 /*

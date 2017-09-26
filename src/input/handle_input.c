@@ -69,4 +69,10 @@ void            handle_input(t_shell *shell, char *buf)
     else if (buf[0] == 10 )
         ft_putendl("ENTER"); // TESTING
 
+    if (!shell->list->next)
+    {
+        ft_putendl("TESTING");
+        exit(0);
+    }
+
 }
