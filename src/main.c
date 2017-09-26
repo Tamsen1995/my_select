@@ -11,6 +11,30 @@ int             putintc(int c)
     return (0);
 }
 
+
+/*
+** Checks the params for
+** to see if there are still any
+** if no then it will call an exit 
+** to the program
+*/
+
+void            check_params(t_shell *shell)
+{
+    t_params *tmp;
+    int i;
+
+    tmp = shell->list;
+    i = 0;
+    while (tmp)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    if (i == 0)
+        exit_handler();
+}
+
 /*
 ** the core of the program
 */
@@ -29,6 +53,7 @@ void            coreloop(t_params *params)
     {
         tputs(tgetstr("cl", NULL), 1, putintc); // TESTING
         handle_input(shell, buf); // TESTING
+       // check_params(shell); // 
         out_params(shell); // TESTING
         read(0, buf, 4);
         update_window_size(shell); // TESTING

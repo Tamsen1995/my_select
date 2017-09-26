@@ -29,7 +29,11 @@ FT_SELECT:
     ✔ delete element from list @done (9/26/2017, 1:46:14 AM)
     ✔ make the item after it the current item @done (9/26/2017, 1:46:16 AM)
     ✔ Properly remove the deleted item from memory @done (9/26/2017, 2:12:28 AM)
-    ☐ Make sure the program exits if there are no more params !!!!!!!!!!!!!!!!!!
+    ✔ Make sure the program exits if there are no more params !!!!!!!!!!!!!!!!!! @done (9/26/2017, 7:30:19 PM)
+        ✔ turn off everything in the terminal @done (9/26/2017, 7:33:14 PM)
+        ☐ free everything properly
+        ☐ make function which does all of the above
+        ☐ call it everytime we need to prematurely exit the program
     ✔ refactor @done (9/26/2017, 2:08:04 AM)
 
 ☐ go through every file and set the functions which are not used
@@ -41,3 +45,5 @@ FT_SELECT:
     ☐ exit
 
 ☐ valgrind through everything
+
+☐ norm/turn in

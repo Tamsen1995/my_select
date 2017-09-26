@@ -16,7 +16,7 @@ int             words_per_line(t_shell *shell)
     ret = 0;
     tmp_params = NULL;
     if (!shell || !shell->list)
-        fatal("Error in (words_per_line)");
+        return (0);
     tmp_params = shell->list;
     word_len = ft_strlen(tmp_params->filename);
     word_len++;

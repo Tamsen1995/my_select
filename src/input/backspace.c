@@ -46,6 +46,11 @@ void                    remove_elem(t_shell *shell)
 
     tmp = reset_current(shell);
     del = tmp;
+
+
+
+
+
     // if there is an element before the one we're at then 
     // point its next pointer to the next item
     if (tmp->prev && tmp->next)
