@@ -23,9 +23,19 @@ FT_SELECT:
     ☐  update libft and make the list functions more modular
     ☐ fix arrow key down
     ☐ fix arrow key up
+    ☐ free everything that jumps at you
 ☐ implement backspace key
     ✔ recognize backspace key @done (9/25/2017, 10:53:43 PM)
     ✔ delete element from list @done (9/26/2017, 1:46:14 AM)
     ✔ make the item after it the current item @done (9/26/2017, 1:46:16 AM)
-    ☐ Properly remove the deleted item from memory
+    ✔ Properly remove the deleted item from memory @done (9/26/2017, 2:12:28 AM)
     ☐ Make sure the program exits if there are no more params
+    ✔ refactor @done (9/26/2017, 2:08:04 AM)
+
+☐ go through every file and set the functions which are not used
+    anywhere else to static functions
+
+☐ implement enter key
+    ☐ have the program print the selected items
+    ☐ free the selected items
+    ☐ exit

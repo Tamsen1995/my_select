@@ -12,6 +12,7 @@ SRC = src/main.c \
 	src/helpers/words_per_line.c \
 	src/input/handle_input.c \
 	src/input/cursors.c \
+	src/input/backspace.c \
 
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 

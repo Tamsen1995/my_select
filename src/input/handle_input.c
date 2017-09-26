@@ -52,50 +52,6 @@ void            select_elem(t_shell *shell)
 
 
 /*
-** removes an item from the list
-*/
-
-void            del_elem(t_shell *shell)
-{
-    t_params *tmp;
-    t_params *del;
-
-    tmp = shell->list;
-
-    // going to the current item
-    while (tmp->current == FALSE && tmp)
-        tmp = tmp->next;
-
-    // Delete the item
-    del = tmp;
-
-    // set the next item to the current one
-    if (tmp->next)
-        tmp->next->current = TRUE;
-    else
-        shell->list->current = TRUE;
-    tmp->current = FALSE;
-
-    // if there is an element before the one we're at then 
-    // point its next pointer to the next item
-    if (tmp->prev && tmp->next)
-    {
-        tmp->prev->next = tmp->next;
-        tmp->next->prev = tmp->prev;
-    }
-    else if (!tmp->prev)
-    {
-        shell->list = shell->list->next;
-        shell->list->prev = NULL;
-    }
-    else if (!tmp->next)
-        tmp->prev->next = NULL;
-    
-    
-    
-}
-
-/*
 ** checks the received buffer for its input
 ** and determines what kind of input it is
 */
@@ -109,9 +65,8 @@ void            handle_input(t_shell *shell, char *buf)
     else if (buf[0] == 32)
         select_elem(shell);
     else if (buf[0] == 127)
-        del_elem(shell);
+        remove_elem(shell);
     else if (buf[0] == 10 )
         ft_putendl("ENTER"); // TESTING
 
-        
 }

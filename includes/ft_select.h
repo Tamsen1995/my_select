@@ -31,6 +31,8 @@ typedef struct		s_shell
 ** in the header
 */
 
+void            remove_elem(t_shell *shell);
+
 void            cursor_up(t_shell *shell);
 void            cursor_down(t_shell *shell);
 void            cursor_left(t_shell *shell);
