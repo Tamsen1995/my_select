@@ -70,6 +70,6 @@ void            handle_input(t_shell *shell, char *buf)
         if (!params_present(shell))
             exit_handler();
     }
-    else if (buf[0] == 10 )
-        ft_putendl("ENTER"); // TESTING
+    else if (buf[0] == 10)
+        print_selected(shell);
 }

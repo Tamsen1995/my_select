@@ -12,9 +12,10 @@ SRC = src/main.c \
 	src/helpers/del_elem.c \
 	src/input/handle_input.c \
 	src/input/cursors.c \
+	src/input/enter.c \
 	src/input/backspace.c \
-	src/handlers/handlers.c \
-	src/handlers/exit_handler.c \
+	src/sig_handlers/handlers.c \
+	src/sig_handlers/exit_handler.c \
 
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
