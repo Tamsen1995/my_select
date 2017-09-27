@@ -46,7 +46,7 @@ void            select_elem(t_shell *shell)
     tmp->current = FALSE;
     if (tmp->next)
         tmp->next->current = TRUE;
-    else if (!tmp->next)
+    else if (!tmp->next && shell->list)
         shell->list->current = TRUE;
 }
 
@@ -65,7 +65,11 @@ void            handle_input(t_shell *shell, char *buf)
     else if (buf[0] == 32)
         select_elem(shell);
     else if (buf[0] == 127)
+    {
         remove_elem(shell);
+        if (!params_present(shell))
+            exit_handler();
+    }
     else if (buf[0] == 10 )
         ft_putendl("ENTER"); // TESTING
 }

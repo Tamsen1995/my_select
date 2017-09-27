@@ -24,11 +24,23 @@ void            sel_mode_off(t_shell *shell)
 	tputs(tgetstr("ve", NULL), 1, putintc);
 }
 
+
+/*
+** receives shell and removes everything
+** accordingly
+*/
+
+void            free_shell(t_shell *shell)
+{
+    // TODO
+}
+
 void            exit_handler()
 {
     t_shell *shell;
 
     shell = get_shell();
+    free_shell(shell); // TESTING
     sel_mode_off(shell);
     exit(0);
 

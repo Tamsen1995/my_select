@@ -31,6 +31,8 @@ typedef struct		s_shell
 ** in the header
 */
 
+
+T_BOOL			params_present(t_shell *shell);
 void            exit_handler();
 
 void            remove_elem(t_shell *shell);

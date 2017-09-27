@@ -12,7 +12,9 @@ static t_params         *reset_current(t_shell *shell)
 
     tmp = shell->list;
     while (tmp->current == FALSE && tmp)
+    {
         tmp = tmp->next;
+    }
     // set the next item to the current one
     if (tmp->next)
         tmp->next->current = TRUE;
@@ -28,11 +30,11 @@ static t_params         *reset_current(t_shell *shell)
 ** and frees its space
 */
 
-static void             del_elem(t_params *del)
+static void             del_elem(t_params **del)
 {
-    ft_strfree(del->filename);
-    free(del);
-    del = NULL;
+    ft_strfree((*del)->filename);
+    free((*del));
+    (*del) = NULL;
 }
 
 /*
@@ -46,11 +48,6 @@ void                    remove_elem(t_shell *shell)
 
     tmp = reset_current(shell);
     del = tmp;
-
-
-
-
-
     // if there is an element before the one we're at then 
     // point its next pointer to the next item
     if (tmp->prev && tmp->next)
@@ -58,13 +55,13 @@ void                    remove_elem(t_shell *shell)
         tmp->prev->next = tmp->next;
         tmp->next->prev = tmp->prev;
     }
-    else if (!tmp->prev)
+    else if (!tmp->prev && tmp->next)
     {
         shell->list = shell->list->next;
         shell->list->prev = NULL;
     }
-    else if (!tmp->next)
+    else if (!tmp->next && tmp->prev)
         tmp->prev->next = NULL;
-    del_elem(del);
+    del_elem(&del);
     // delete item here
 }
