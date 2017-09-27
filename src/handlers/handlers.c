@@ -1,4 +1,4 @@
-#include "../includes/ft_select.h"
+#include "../../includes/ft_select.h"
 
 /*
 ** handles the signal case 
@@ -13,37 +13,6 @@ void            win_handler(void)
     update_window_size(shell);
     tputs(tgetstr("cl", NULL), 1, putintc); // TESTING
     out_params(shell);
-}
-
-
-
-void            sel_mode_off(t_shell *shell)
-{
-	tcsetattr(0, TCSADRAIN, shell->termold);
-	tputs(tgetstr("te", NULL), 1, putintc);
-	tputs(tgetstr("ve", NULL), 1, putintc);
-}
-
-
-/*
-** receives shell and removes everything
-** accordingly
-*/
-
-void            free_shell(t_shell *shell)
-{
-    // TODO
-}
-
-void            exit_handler()
-{
-    t_shell *shell;
-
-    shell = get_shell();
-    free_shell(shell); // TESTING
-    sel_mode_off(shell);
-    exit(0);
-
 }
 
 /*

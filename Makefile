@@ -4,7 +4,6 @@ LIBFT = libft/libft.a
 NAME = ft_select
 SRC = src/main.c \
 	src/shell_ops.c \
-	src/handlers.c \
 	src/params/init_params.c \
 	src/params/add_brackets.c \
 	src/params/out_params.c \
@@ -13,6 +12,8 @@ SRC = src/main.c \
 	src/input/handle_input.c \
 	src/input/cursors.c \
 	src/input/backspace.c \
+	src/handlers/handlers.c \
+	src/handlers/exit_handler.c \
 
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
