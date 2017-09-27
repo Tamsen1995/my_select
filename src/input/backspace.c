@@ -25,19 +25,6 @@ static t_params         *reset_current(t_shell *shell)
 }
 
 /*
-** properly deletes an element
-** from the list
-** and frees its space
-*/
-
-static void             del_elem(t_params **del)
-{
-    ft_strfree((*del)->filename);
-    free((*del));
-    (*del) = NULL;
-}
-
-/*
 ** removes an item from the list
 */
 
@@ -62,6 +49,6 @@ void                    remove_elem(t_shell *shell)
     }
     else if (!tmp->next && tmp->prev)
         tmp->prev->next = NULL;
-    del_elem(&del);
+    del_elem(del);
     // delete item here
 }

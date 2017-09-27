@@ -10,12 +10,11 @@ static void         free_shell(t_shell *shell)
     t_params *params; // To free the params with
 
     params = shell->list;
-    while (params)
+    while (params && params_present(shell))
     {
+        del_elem(params);
         params = params->next;
     }
-
-    // TODO
 }
 
 /*
