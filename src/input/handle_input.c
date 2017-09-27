@@ -11,7 +11,7 @@ static void     arrow_keys(t_shell *shell, char *buf)
 
     tmp = NULL;
     if (!shell || !buf)
-        fatal("ERROR (arrow_keys)");
+        return ;
     tmp = shell;
     if (buf[0] == 27 && buf[1] == 91 && buf[2] == 65 && buf[3] == 0)
         cursor_up(shell);
@@ -35,7 +35,7 @@ void            select_elem(t_shell *shell)
 
     tmp = NULL;
     if (!shell || !shell->list)
-        fatal("ERROR (select_elem)");
+        return ;
     tmp = shell->list;
     while (tmp->current == FALSE && tmp)
         tmp = tmp->next;
@@ -46,9 +46,10 @@ void            select_elem(t_shell *shell)
     tmp->current = FALSE;
     if (tmp->next)
         tmp->next->current = TRUE;
-    else if (!tmp->next)
+    else if (!tmp->next && shell->list)
         shell->list->current = TRUE;
 }
+
 
 /*
 ** checks the received buffer for its input
@@ -57,10 +58,18 @@ void            select_elem(t_shell *shell)
 
 void            handle_input(t_shell *shell, char *buf)
 {
+    if (!shell && !shell->list)
+        return ;
     if (buf[0] == 27)
         arrow_keys(shell, buf);
-    if (buf[0] == 10 )
-        ft_putendl("ENTER"); // TESTING
-    if (buf[0] == 32)
+    else if (buf[0] == 32)
         select_elem(shell);
+    else if (buf[0] == 127)
+    {
+        remove_elem(shell);
+        if (!params_present(shell))
+            exit_handler();
+    }
+    else if (buf[0] == 10)
+        print_selected(shell);
 }

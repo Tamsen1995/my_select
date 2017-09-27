@@ -1,4 +1,26 @@
 FT_SELECT:
+
+
+☐ change the params structre so that it contains a name if brackets and one without
+    ☐ change the del_elem function so that it will free this additional string in the structure
+
+☐ implement enter key
+    ☐ have the program print the selected items
+    ☐ free
+    ☐ exit
+
+☐  handle signals
+    ✔ window size change @done (9/22/2017, 5:32:05 PM)
+    ✔ quitting with control C @done (9/22/2017, 5:32:26 PM)
+    ☐ check out the other signals from example
+
+☐ Call exit handler everytime the program needs to exit prematurely
+
+☐ go through every file and set the functions which are not used
+    anywhere else to static functions
+
+
+
 ✔ implement an old termios structure for resetting the termios attributes  @done (9/22/2017, 4:11:19 PM)
 ✔ Make a function which will indicate which file is currently chosen @done (9/22/2017, 11:55:30 PM)
     ✔ implement right arrow key @done (9/22/2017, 5:00:01 PM)
@@ -8,10 +30,6 @@ FT_SELECT:
     ✔ implement up arrow key @done (9/22/2017, 11:55:28 PM)
 ✔ Figure out how to make the files show up in temrinal form @done (9/22/2017, 5:31:27 PM)
 ✔ get the terminal to refresh properly @done (9/22/2017, 5:31:33 PM)
-☐  handle signals
-    ✔ window size change @done (9/22/2017, 5:32:05 PM)
-    ✔ quitting with control C @done (9/22/2017, 5:32:26 PM)
-    ☐ check out the other signals from example
 
 ✔ selecting elements @done (9/23/2017, 4:14:27 AM)
     ✔ handle booleans for the select elements @done (9/22/2017, 5:57:37 PM)
@@ -23,6 +41,17 @@ FT_SELECT:
     ☐  update libft and make the list functions more modular
     ☐ fix arrow key down
     ☐ fix arrow key up
-☐ implement backspace key
-    ☐ recognize backspace key
-    ☐ delete element from list
+    ☐ free everything that jumps at you
+✔ implement backspace key @done (9/27/2017, 6:52:00 PM)
+    ✔ recognize backspace key @done (9/25/2017, 10:53:43 PM)
+    ✔ delete element from list @done (9/26/2017, 1:46:14 AM)
+    ✔ make the item after it the current item @done (9/26/2017, 1:46:16 AM)
+    ✔ Properly remove the deleted item from memory @done (9/26/2017, 2:12:28 AM)
+    ✔ Make sure the program exits if there are no more params !!!!!!!!!!!!!!!!!! @done (9/27/2017, 6:51:20 PM)
+        ✔ turn off everything in the terminal @done (9/27/2017, 6:29:35 PM)
+        ✔ free everything properly @done (9/27/2017, 6:51:15 PM)
+        ✔ make function which does all of the above @done (9/27/2017, 6:51:17 PM)
+
+☐ valgrind through everything
+
+☐ norm/turn in

@@ -16,6 +16,7 @@ void            show_elem(t_params *tmp_param)
         tputs(tgetstr("ue", NULL), 1, putintc); // underline mode off
     if (tmp_param->select)
         tputs(tgetstr("me", NULL), 1, putintc);
+    ft_putstr(" ");
 }
 
 /*
@@ -32,7 +33,6 @@ void            out_params(t_shell *shell)
     // discern words per line
     // print that amount of words
     // set a newline
-
     words = words_per_line(shell);
     i = 0;
     while (tmp_param)
@@ -42,10 +42,7 @@ void            out_params(t_shell *shell)
             i = 0;
             ft_putendl("");
         }
-
         show_elem(tmp_param);
-        ft_putstr(" ");
-
         tmp_param = tmp_param->next;
         i++;
     }

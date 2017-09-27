@@ -4,14 +4,18 @@ LIBFT = libft/libft.a
 NAME = ft_select
 SRC = src/main.c \
 	src/shell_ops.c \
-	src/handlers.c \
 	src/params/init_params.c \
 	src/params/add_brackets.c \
 	src/params/out_params.c \
 	src/helpers/find_max_str.c \
 	src/helpers/words_per_line.c \
+	src/helpers/del_elem.c \
 	src/input/handle_input.c \
 	src/input/cursors.c \
+	src/input/enter.c \
+	src/input/backspace.c \
+	src/sig_handlers/handlers.c \
+	src/sig_handlers/exit_handler.c \
 
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 

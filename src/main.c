@@ -11,6 +11,30 @@ int             putintc(int c)
     return (0);
 }
 
+
+/*
+** checks to see if there are any params left
+** in the list
+** if no returns FALSE
+*/
+
+T_BOOL            params_present(t_shell *shell)
+{
+    t_params *tmp;
+    int i;
+
+    tmp = shell->list;
+    i = 0;
+    while (tmp && ft_strcmp("" , tmp->filename) != 0)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    if (i == 0)
+        return (FALSE);
+    return (TRUE);
+}
+
 /*
 ** the core of the program
 */
@@ -27,11 +51,12 @@ void            coreloop(t_params *params)
     shell->list->current = TRUE;
     while (1)
     {
-        tputs(tgetstr("cl", NULL), 1, putintc); // TESTING
-        handle_input(shell, buf); // TESTING
-        out_params(shell); // TESTING
+        tputs(tgetstr("cl", NULL), 1, putintc);
+        handle_input(shell, buf); // WIP
+        out_params(shell);
+        ft_bzero(buf, BUFF_SIZE);
         read(0, buf, 4);
-        update_window_size(shell); // TESTING
+        update_window_size(shell);
     }
     
     // TODO free shell
