@@ -9,7 +9,7 @@ void print_selected(t_shell *shell)
     {
         if (tmp->select == TRUE)
         {
-            ft_putstr(tmp->filename);
+            ft_putstr(tmp->og_name);
             ft_putstr(" ");
         }
         tmp = tmp->next;

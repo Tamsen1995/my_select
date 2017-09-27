@@ -73,29 +73,11 @@ t_params        *make_brackets_list(t_params *params, int longest_len)
     while (tmp)
     {
         brack_fl_name = bracks_to_elem(tmp, longest_len);
-        ft_push_back_param(&ret, brack_fl_name);
+        ft_push_back_param(&ret, brack_fl_name, tmp->filename);
         free(brack_fl_name);
         tmp = tmp->next;
     }
     return (ret);
-}
-
-/*
-** attaches the end of the list to the beginning
-** of it in order to make the list circular
-*/
-
-void            make_circular(t_params *params)
-{
-    t_params *tmp;
-
-    tmp = NULL;
-    if (!params)
-        fatal("ERROR in (make_circular)");
-    tmp = params;
-    while (tmp->next)
-        tmp = tmp->next;
-    tmp->next = params;
 }
 
 /*

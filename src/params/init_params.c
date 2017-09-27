@@ -4,7 +4,7 @@
 ** allocatesa param element and returns it
 */
 
-t_params		*ft_add_param(char *filename)
+t_params		*ft_add_param(char *filename, char *og_name)
 {
 	t_params	*param;
 	
@@ -12,6 +12,7 @@ t_params		*ft_add_param(char *filename)
 	if (!(param = (t_params *)malloc(sizeof(t_params))))
 		return (NULL);
 	param->filename = ft_strdup(filename);
+    param->og_name = og_name;
     param->next = NULL;
     param->prev = NULL;
     param->select = FALSE;
@@ -23,14 +24,14 @@ t_params		*ft_add_param(char *filename)
 ** pushes a param to the back of the list
 */
 
-void            ft_push_back_param(t_params **begin_list, char *filename)
+void            ft_push_back_param(t_params **begin_list, char *filename, char *og_name)
 {
     t_params *tmp;
     t_params *new;
 
     tmp = NULL;
     new = NULL;
-	new = ft_add_param(filename);
+	new = ft_add_param(filename, og_name);
 	if (!*begin_list)
 	{
 		*begin_list = new;
@@ -58,7 +59,7 @@ t_params        *init_params(char **av)
     param_list = NULL;
     while (av[i])
     {
-        ft_push_back_param(&param_list, av[i]);
+        ft_push_back_param(&param_list, av[i], "");
         i++;
     }
     return (param_list);

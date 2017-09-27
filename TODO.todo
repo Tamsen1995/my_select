@@ -1,11 +1,11 @@
 FT_SELECT:
 
 
-☐ change the params structre so that it contains a name if brackets and one without
-    ☐ change the del_elem function so that it will free this additional string in the structure
+✔ change the params structre so that it contains a name if brackets and one without @done (9/27/2017, 7:34:06 PM)
+    ✔ change the del_elem function so that it will free this additional string in the structure @done (9/27/2017, 7:34:03 PM)
 
 ☐ implement enter key
-    ☐ have the program print the selected items
+    ✔ have the program print the selected items @done (9/27/2017, 7:34:12 PM)
     ☐ free
     ☐ exit
 
