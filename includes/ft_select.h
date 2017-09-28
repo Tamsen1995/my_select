@@ -32,7 +32,7 @@ typedef struct		s_shell
 ** in the header
 */
 
-
+void   			free_shell(t_shell *shell);
 void			print_selected(t_shell *shell);
 void            del_elem(t_params *del);
 T_BOOL			params_present(t_shell *shell);

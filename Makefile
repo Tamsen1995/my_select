@@ -10,6 +10,7 @@ SRC = src/main.c \
 	src/helpers/find_max_str.c \
 	src/helpers/words_per_line.c \
 	src/helpers/del_elem.c \
+	src/helpers/free_shell.c \
 	src/input/handle_input.c \
 	src/input/cursors.c \
 	src/input/enter.c \
