@@ -12,7 +12,8 @@ typedef struct		s_params
 {
 	struct s_params	*next;
 	struct s_params	*prev;
-	char			*filename;
+	char			*filename; // filename with brackets
+	char			*og_name; // original filename
 	T_BOOL			current; // indicates if the elem is the current elem the cursor is pointing to
 	T_BOOL 			select; // indicates if the elem is selected
 }					t_params;
@@ -31,7 +32,7 @@ typedef struct		s_shell
 ** in the header
 */
 
-
+void   			free_shell(t_shell *shell);
 void			print_selected(t_shell *shell);
 void            del_elem(t_params *del);
 T_BOOL			params_present(t_shell *shell);
@@ -54,8 +55,8 @@ int				find_max_str(t_params *params);
 void			update_window_size(t_shell *shell);
 void            apply_mode(t_shell *shell);
 t_shell         *make_shell(void);
-t_params		*ft_add_param(char *filename);
-void            ft_push_back_param(t_params **begin_list, char *filename);
+t_params		*ft_add_param(char *filename, char *og_name);
+void            ft_push_back_param(t_params **begin_list, char *filename, char *og_name);
 t_params        *init_params(char **av);
 
 #endif

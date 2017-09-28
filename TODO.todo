@@ -1,13 +1,6 @@
 FT_SELECT:
 
-
-☐ change the params structre so that it contains a name if brackets and one without
-    ☐ change the del_elem function so that it will free this additional string in the structure
-
-☐ implement enter key
-    ☐ have the program print the selected items
-    ☐ free
-    ☐ exit
+☐ valgrind through everything
 
 ☐  handle signals
     ✔ window size change @done (9/22/2017, 5:32:05 PM)
@@ -19,6 +12,20 @@ FT_SELECT:
 ☐ go through every file and set the functions which are not used
     anywhere else to static functions
 
+☐  refactor
+    ✔ Restructure input ops code @done (9/22/2017, 6:28:29 PM)
+    ☐  update libft and make the list functions more modular
+    ☐ fix arrow key down
+    ☐ fix arrow key up
+    ☐ free everything that jumps at you
+
+✔ change the params structre so that it contains a name if brackets and one without @done (9/27/2017, 7:34:06 PM)
+    ✔ change the del_elem function so that it will free this additional string in the structure @done (9/27/2017, 7:34:03 PM)
+
+✔ implement enter key @done (9/28/2017, 8:19:00 PM)
+    ✔ have the program print the selected items @done (9/27/2017, 7:34:12 PM)
+    ✔ free @done (9/28/2017, 8:18:58 PM)
+    ✔ exit @done (9/28/2017, 8:18:59 PM)
 
 
 ✔ implement an old termios structure for resetting the termios attributes  @done (9/22/2017, 4:11:19 PM)
@@ -36,12 +43,6 @@ FT_SELECT:
     ✔ implement highlighting for selected elements @done (9/22/2017, 5:57:42 PM)
     ✔ when an item is selected move the cursor to the right @done (9/22/2017, 6:09:05 PM)
 
-☐  refactor
-    ✔ Restructure input ops code @done (9/22/2017, 6:28:29 PM)
-    ☐  update libft and make the list functions more modular
-    ☐ fix arrow key down
-    ☐ fix arrow key up
-    ☐ free everything that jumps at you
 ✔ implement backspace key @done (9/27/2017, 6:52:00 PM)
     ✔ recognize backspace key @done (9/25/2017, 10:53:43 PM)
     ✔ delete element from list @done (9/26/2017, 1:46:14 AM)
@@ -51,7 +52,5 @@ FT_SELECT:
         ✔ turn off everything in the terminal @done (9/27/2017, 6:29:35 PM)
         ✔ free everything properly @done (9/27/2017, 6:51:15 PM)
         ✔ make function which does all of the above @done (9/27/2017, 6:51:17 PM)
-
-☐ valgrind through everything
 
 ☐ norm/turn in
